@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #fdf6e3;
+  --peach: #ffe4d6;
+  --warmyellow: #fff2c4;
+  --mint: #d9f9e6;
+  --lavender: #ece4ff;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, sans-serif;
+  background-color: #fff5ef;
+  background-image:
+    radial-gradient(at 18% 12%, rgba(255, 203, 180, 0.55) 0px, transparent 50%),
+    radial-gradient(at 82% 20%, rgba(217, 249, 230, 0.55) 0px, transparent 50%),
+    radial-gradient(at 75% 85%, rgba(236, 228, 255, 0.6) 0px, transparent 50%),
+    radial-gradient(at 25% 80%, rgba(255, 242, 196, 0.55) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: #3d342a;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Friendly heading font */
+.font-display {
+  font-family: 'Fredoka', system-ui, sans-serif;
+}
+
+/* No text selection on tap-targets to feel app-like */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgba(255, 242, 196, 0.3); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffcbb4, #c0a3ff);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Magical book page texture */
+.book-page {
+  background-color: #fffdf7;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 224, 214, 0.35) 0, transparent 32%),
+    radial-gradient(circle at 88% 82%, rgba(217, 249, 230, 0.35) 0, transparent 32%),
+    radial-gradient(circle at 78% 18%, rgba(255, 242, 196, 0.3) 0, transparent 28%);
+  position: relative;
+}
+.book-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(91, 77, 62, 0.02) 0 1px, transparent 1px 6px);
+  pointer-events: none;
+}
+
+/* Book spine shadow down the center of two-page spreads */
+.book-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 14px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(91, 77, 62, 0.10), transparent);
+  pointer-events: none;
+}
+
+/* Sparkle dots */
+.sparkle-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #fff 0%, #ffd35a 60%, transparent 70%);
+}
+
+/* Big touch-friendly buttons */
+.btn-magic {
+  font-family: 'Fredoka', system-ui, sans-serif;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s, filter 0.2s;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+.btn-magic:active { transform: scale(0.94); }
+.btn-magic:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s, filter 0.25s;
+}
+.card-lift:hover { transform: translateY(-6px); }
+.card-lift:active { transform: translateY(-2px) scale(0.98); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
