@@ -38,7 +38,7 @@ export function HomeSection({ onNavigate }: HomeProps) {
 
         <h1 className="mt-4 font-display text-4xl sm:text-6xl font-bold text-ink-600 leading-tight">
           Mi Libro <span className="bg-gradient-to-r from-peach-400 to-lavender-400 bg-clip-text text-transparent">Mágico</span>
-          <br />de Lectura
+          <br />de Lecturas
         </h1>
         <p className="mt-4 max-w-xl text-base sm:text-lg text-ink-500 leading-relaxed">
           Un cuento interactivo donde cada letra cobra vida. Toca, escucha y juega
